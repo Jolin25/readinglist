@@ -1,0 +1,11 @@
+# tomcat 要监听的端口
+server:
+  port: 8002
+#logback
+logging:
+  level:
+    root: INFO
+    org.springframework.security: DEBUG
+#应用程序bean的配置外置
+amazon:
+  associateId: Joly

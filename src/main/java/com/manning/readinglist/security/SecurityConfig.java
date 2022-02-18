@@ -45,7 +45,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .authorizeRequests()
                 // todo / 和 /** 有什么区别
                 // 访问x路径的请求需要符合xx角色才可以
-                .antMatchers("/").access("hasRole('READER')")
+//                .antMatchers("/").access("hasRole('READER')")
                 // 访问x路径的请求被允许
                 .antMatchers("/**").permitAll()
             .and()
@@ -53,7 +53,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // 登录路径（controller的那个）
                 .loginPage("/login")
                 // 登陆失败页
-                .failureUrl("/login?error=true");
+                .failureUrl("/")
+                .successForwardUrl("/");
     }
 
     /**
