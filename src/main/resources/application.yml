@@ -6,9 +6,12 @@ server:
 amazon:
   associateId: Joly
 spring:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
   profiles:
 #说明用哪个配置文件
-    active: uat
+    active: dev
 ---
 spring:
   profiles: dev

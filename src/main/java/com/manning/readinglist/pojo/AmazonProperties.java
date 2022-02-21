@@ -3,6 +3,9 @@ package com.manning.readinglist.pojo;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
+/**
+ * @author 小虫子的小日常
+ */
 @Component
 @ConfigurationProperties("amazon") // 注入带“amazon”前缀的属性
 public class AmazonProperties {

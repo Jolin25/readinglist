@@ -29,5 +29,8 @@ public class ReadinglistApplication implements CommandLineRunner {
 //        Reader walt = readerRepository.findByUsername("walt");
         Iterable<Reader> all = readerRepository.findAll();
         log.info(all.toString());
+        readerRepository.save(new Reader("Joly","JolyJ","123456"));
+        Iterable<Reader> all2 = readerRepository.findAll();
+        log.info(all2.toString());
     }
 }

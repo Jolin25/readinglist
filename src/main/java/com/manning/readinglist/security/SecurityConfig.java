@@ -71,7 +71,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 @Override
                 public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
                     // todo 这样就没问题，那就是jpa的使用有问题
-                    return new Reader("a","b","c");
+                    return new Reader("Joly","JolyJ","123456");
+//                    return readerRepository.findByUsername(username);
                 }
             });
     }
