@@ -3,6 +3,7 @@ package com.manning.readinglist.controller;
 
 import com.manning.readinglist.dao.ReadingListRepository;
 import com.manning.readinglist.pojo.Book;
+import com.manning.readinglist.pojo.Reader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,6 +34,7 @@ public class ReadingListController {
         List<Book> readingList = readingListRepository.findByReader(reader);
         if (readingList != null) {
             model.addAttribute("books", readingList);
+            model.addAttribute("reader",new Reader("craig","craigfn","craigpwd"));
         }
         return "readingList";
     }
