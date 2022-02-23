@@ -1,6 +1,6 @@
 package com.manning.readinglist.controller;
 
-import com.manning.readinglist.dao.ReaderRepository;
+//import com.manning.readinglist.dao.ReaderRepository;
 import com.manning.readinglist.dao.ReadingListRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,8 +35,8 @@ class MockMvcWebTestsTwo {
     @Autowired
     private MockMvc mockMvc;
     // todo 为什么还需要注入这个实例，理论上来说，我没有用到
-    @MockBean
-    private ReaderRepository readerRepository;
+//    @MockBean
+//    private ReaderRepository readerRepository;
 
     @MockBean
     private ReadingListRepository readingListRepository;
@@ -56,4 +56,5 @@ class MockMvcWebTestsTwo {
                 .andExpect(view().name("readingList"))
                 .andExpect(model().attributeExists("books"));
     }
+
 }

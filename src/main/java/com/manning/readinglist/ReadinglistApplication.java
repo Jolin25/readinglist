@@ -1,7 +1,7 @@
 package com.manning.readinglist;
 
-import com.manning.readinglist.dao.ReaderRepository;
-import com.manning.readinglist.pojo.Reader;
+//import com.manning.readinglist.dao.ReaderRepository;
+//import com.manning.readinglist.pojo.Reader;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -16,8 +16,8 @@ import org.springframework.http.codec.cbor.Jackson2CborDecoder;
 @SpringBootApplication // 开启组件扫描和自动配置
 @Slf4j
 public class ReadinglistApplication implements CommandLineRunner {
-    @Autowired
-    ReaderRepository readerRepository;
+//    @Autowired
+//    ReaderRepository readerRepository;
 
     public static void main(String[] args) {
         // 负责启动 引导应用程序
@@ -29,10 +29,10 @@ public class ReadinglistApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 //        Reader walt = readerRepository.findByUsername("walt");
-        Iterable<Reader> all = readerRepository.findAll();
-        log.info(all.toString());
-        readerRepository.save(new Reader("Joly", "JolyJ", "123456"));
-        Iterable<Reader> all2 = readerRepository.findAll();
-        log.info(all2.toString());
+//        Iterable<Reader> all = readerRepository.findAll();
+//        log.info(all.toString());
+//        readerRepository.save(new Reader("Joly", "JolyJ", "123456"));
+//        Iterable<Reader> all2 = readerRepository.findAll();
+//        log.info(all2.toString());
     }
 }

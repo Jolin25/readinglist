@@ -20,6 +20,25 @@ public class Book {
     private String author;
     private String description;
 
+    public Book() {
+    }
+
+    public Book(Long id, String reader, String isbn, String title, String author, String description) {
+        this.id = id;
+        this.reader = reader;
+        this.isbn = isbn;
+        this.title = title;
+        this.author = author;
+        this.description = description;
+    }
+
+    public Book(String isbn, String title, String author, String description) {
+        this.isbn = isbn;
+        this.title = title;
+        this.author = author;
+        this.description = description;
+    }
+
     public Long getId() {
         return id;
     }
