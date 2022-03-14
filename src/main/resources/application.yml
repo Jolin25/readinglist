@@ -1,25 +1,31 @@
 # tomcat 要监听的端口
 server:
-  port: 8002
+  port: 8080
 
 #应用程序bean的配置外置
 amazon:
   associateId: Joly
 spring:
-  jpa:
-    hibernate:
-      ddl-auto: create-drop
+#  jpa:
+#    hibernate:
+#      ddl-auto: create-drop
   profiles:
 #说明用哪个配置文件
     active: dev
 ---
 spring:
   profiles: dev
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
 #logback
 logging:
   level:
     root: INFO
     org.springframework.security: DEBUG
+
 ---
 # 说明这个配置文件的标识
 spring:

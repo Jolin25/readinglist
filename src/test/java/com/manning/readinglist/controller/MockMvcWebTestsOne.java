@@ -11,8 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.result.JsonPathResultMatchers;
 
-import static org.hamcrest.Matchers.contains;
-import static org.hamcrest.Matchers.samePropertyValuesAs;
+import static org.hamcrest.Matchers.*;
 import static org.springframework.http.MediaType.APPLICATION_FORM_URLENCODED;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -69,6 +68,7 @@ class MockMvcWebTestsOne {
                 .andExpect(status().is3xxRedirection())
                 .andExpect(header().string("Location", "/readingList"));
          mockMvc.perform(get("/readingList"))
+                 .andExpect(model().attribute("books",hasSize(1)))
                  .andExpect(model().attribute("books",contains(samePropertyValuesAs(book))));
 
     }
